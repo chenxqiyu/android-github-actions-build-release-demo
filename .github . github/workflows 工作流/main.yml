@@ -36,13 +36,13 @@ jobs:
       run: |
         echo "RELEASE_BODY: " ${{ steps.changelog.outputs.RELEASE_BODY }}
 
-    - name: Kick off Cancelling(if need)
-      uses: andymckay/cancel-action@0.2
-      if: steps.changelog.outputs.RELEASE_BODY == 'CANCEL'
+#     - name: Kick off Cancelling(if need)
+#       uses: andymckay/cancel-action@0.2
+#       if: steps.changelog.outputs.RELEASE_BODY == 'CANCEL'
 
-    - name: Waiting for Cancellation
-      run: sleep 30
-      if: steps.changelog.outputs.RELEASE_BODY == 'CANCEL'
+#     - name: Waiting for Cancellation
+#       run: sleep 30
+#       if: steps.changelog.outputs.RELEASE_BODY == 'CANCEL'
 
     - uses: actions/cache@v2
       with:
